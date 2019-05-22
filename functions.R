@@ -40,6 +40,6 @@ median.approxfun<-function(x,probability){
   return(tim)}
 
 quantile.bins<-function(binedges,bincounts,quantile=.5){
-  splb <- splinebins(binedges, bincounts)
+  splb <- splinebins(binedges, bincounts,monoMethod="hyman")
   output<-median.approxfun(splb$splineCDF,quantile)
   output}
